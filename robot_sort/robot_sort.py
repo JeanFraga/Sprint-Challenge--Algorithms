@@ -100,36 +100,53 @@ class SortingRobot:
         if self._item is None:
             self.swap_item()
         while self.can_move_right() is True:
-            if self.compare_item() == 1:
-                self.swap_item()
-                print(self._item, "swaped right")
-            else:
-                self.move_right()
-        while self.can_move_left() is True:
             if self.compare_item() == -1:
                 self.swap_item()
-                print(self._item, "swapped left")
+                # print(self._item, "swaped right")
+            # elif self.compare_item() == None:
+            #     while self.can_move_right() is True:
+            #         self.move_right()
+            #     self.swap_item()
+                # self.move_right()
+            else:
+                self.move_right()
+                # self.swap_item()
+        while self.can_move_left() is True:
+            if self.compare_item() == 1:
+                self.swap_item()
+                # print(self._item, "swapped left")
+            # elif self.compare_item() is None:
+            #     while self.can_move_left() is True:
+            #         self.move_left()
+            #     self.swap_item()
+                # self.swap_item()
+                # self.move_left()
             else:
                 self.move_left()
-        
-        self.swap_item()
-        if self._item is None:
-            while self.can_move_right() is True:
-                self.move_right()
-                # print("moved right")
-                if self.compare_item() == 1:
-                    break
-            # while self.can_move_left() is True:
-            #     self.move_left()
-            
-            while self.can_move_left() is True:
-                self.move_left()
-                # print("moved left")
-            # self.swap_item()
-            # return "finished"
-                if self._item == 1:
-                    return "finished"
-            self.sort()
+            # self.move_left()
+
+        # self.swap_item()
+        # if self._item is None:
+        # self.sort()
+        # for i in range(len(self._list)):
+        while self.can_move_right() is True:
+            self.move_right()
+            # print("moved right")
+            if self.compare_item() == -1:
+                # while self.can_move_left() is True:
+                #     self.move_left()
+                # print(self._time)
+                print(self._list)
+                self.sort()
+            else:
+                while self.can_move_left() is True:
+                    self.move_left()
+                self.swap_item()
+                print(self._time)
+                return self._time
+            # if self.compare_item() ==-1:
+            #     self.sort()
+        # self.swap_item()
         
 
 

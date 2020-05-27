@@ -129,6 +129,7 @@ class SortingRobot:
         # if self._item is None:
         # self.sort()
         # for i in range(len(self._list)):
+        
         while self.can_move_right() is True:
             self.move_right()
             # print("moved right")
@@ -137,6 +138,7 @@ class SortingRobot:
                 #     self.move_left()
                 # print(self._time)
                 print(self._list)
+                # for i in range(0,100):
                 self.sort()
             else:
                 while self.can_move_left() is True:
